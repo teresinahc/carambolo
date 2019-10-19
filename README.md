@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Project Description
+O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Randômicas, um hackaton pela vida" no mês de Setembro, no qual acontecem iniciativas e debates acerca da saúde mental com foco em prevenção ao suicídio. No app os usuários poderão externalizar suas emoções e contar sobre seu dia-a-dia, possibilitando compreender e organizar seus pensamentos. A intenção desta aplicação é facilitar para pacientes em terapia o exercício da atividade psicológica conhecida como "técnica das três colunas", que consiste em registrar emoções diárias e reflexão acerca delas.
 
-Things you may want to cover:
+### Ruby version
+#####ruby 2.6.3
+#####postgres (PostgreSQL) 11.5
 
-* Ruby version
+###How to contribute
+#####create fork
+`git clone https://github.com/<your username>/carambolo`
 
-* System dependencies
+`git remote add upstream https://github.com/marclerodrigues/carambolo`
 
-* Configuration
+#####submit a pull request
 
-* Database creation
+### Configuration
+`bundle install`
 
-* Database initialization
+`yarn install --check-files`
 
-* How to run the test suite
+`pg_ctl -D /usr/local/var/postgres start`
 
-* Services (job queues, cache servers, search engines, etc.)
+`cp config/database.yml.sample config/database.yml`
 
-* Deployment instructions
+### Database initialization
+`rails db:setup`
 
-* ...
+### Run the server
+`rails server`
+
