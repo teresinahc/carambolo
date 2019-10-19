@@ -1,3 +1,54 @@
 // Place all the styles related to the Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+    display: grid;
+    justify-content: center;
+    margin: auto 0;
+}
+.table {
+    border-collapse: collapse;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.entrie {
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+}
+
+.columnTitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.column {
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.newEntryButton {
+    width: 200px;
+    margin: 10px auto auto auto;
+    height: 50px;
+    background-color: greenyellow;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+        background-color: #b2db35;
+    }
+}
