@@ -1,0 +1,19 @@
+pt-BR:
+  back: "Voltar"
+  create: "Criar"
+  delete: "Deletar"
+  edit: "Editar"
+  show: "Visualizar"
+  activerecord:
+    models:
+      entry: "Entrada"
+      user: "Usuário"
+    attributes:
+      entries:
+        description: "Descrição"
+        feeling: "Sentimento"
+        feelings:
+          angry: "Raiva"
+          confused: "Confuso"
+          happy: "Feliz"
+          sad: "Triste"

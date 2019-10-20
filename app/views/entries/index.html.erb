@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Entries</h1>
+<h1><%= t(:entry, scope: 'activerecord.models').pluralize%></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Feeling</th>
-      <th>Description</th>
+      <th><%= t(:feeling, scope: 'activerecord.attributes.entries') %></th>
+      <th><%= t(:description, scope: 'activerecord.attributes.entries') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +14,11 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.feeling %></td>
+        <td><%= t(entry.feeling, scope: 'activerecord.attributes.entries.feelings') %></td>
         <td><%= entry.description %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:show), entry %></td>
+        <td><%= link_to t(:edit), edit_entry_path(entry) %></td>
+        <td><%= link_to t(:delete), entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Entry', new_entry_path %>
+<%= link_to "#{t(:create)} #{t(:entry, scope: 'activerecord.models')}", new_entry_path %>

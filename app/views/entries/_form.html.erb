@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :feeling %>
-    <%= form.text_field :feeling %>
+    <%= form.label t(:feeling, scope: 'activerecord.attributes.entries') %>
+    <%= form.select :feeling, @feelings %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label t(:description, scope: 'activerecord.attributes.entries') %>
     <%= form.text_area :description %>
   </div>
 

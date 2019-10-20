@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :set_collections, only: [:new, :create]
 
   # GET /entries
   # GET /entries.json
@@ -70,5 +71,9 @@ class EntriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
       params.require(:entry).permit(:feeling, :description)
+    end
+
+    def set_collections
+      @feelings = Entry.feelings.map { |s| [t(s[0], scope: 'activerecord.attributes.entries.feelings'), s[0]] }
     end
 end
