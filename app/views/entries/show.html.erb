@@ -10,5 +10,14 @@
   <%= @entry.description %>
 </p>
 
+<p>
+  <strong>Hour:</strong>
+  <%= @entry.hour.strftime("%I:%M %p")%>
+</p>
+<p>
+  <strong>Day:</strong>
+  <%= @entry.day %>
+</p>
+
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>
