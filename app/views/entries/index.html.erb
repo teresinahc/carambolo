@@ -8,6 +8,7 @@
       <th>Feeling</th>
       <th>Description</th>
       <th>Hour</th>
+      <th>Day</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= entry.feeling %></td>
         <td><%= entry.description %></td>
         <td><%= entry.hour.strftime("%I:%M %p") %></td>
+        <td><%= entry.day %></td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
