@@ -1,6 +1,7 @@
 // Place all the styles related to the Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables.scss';
 
 .container {
     display: grid;
@@ -17,7 +18,7 @@
 }
 
 .entrie {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
     border-radius: 20px;
 }
 
@@ -28,7 +29,7 @@
 }
 
 .column {
-    border: 1px solid black;
+    border: 1px solid $black;
     font-size: 20px;
     padding: 10px;
     border-radius: 20px;
@@ -38,7 +39,7 @@
     width: 200px;
     margin: 10px auto auto auto;
     height: 50px;
-    background-color: greenyellow;
+    background-color: $green-yellow;
     border-radius: 10px;
     text-align: center;
     font-size: 20px;
@@ -46,9 +47,9 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #000;
+    color: $black;
 
     &:hover {
-        background-color: #b2db35;
+        background-color: $green-yellow;
     }
 }
