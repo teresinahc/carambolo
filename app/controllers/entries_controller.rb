@@ -74,6 +74,6 @@ class EntriesController < ApplicationController
     end
 
     def set_collections
-      @feelings = Entry.feelings.map { |s| [t(s[0], scope: 'activerecord.attributes.entries.feelings'), s[0]] }
+      @feelings = Entry.feeling.options
     end
 end

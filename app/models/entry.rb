@@ -1,3 +1,5 @@
 class Entry < ApplicationRecord
-  enum feeling: [:angry, :sad, :confused, :happy]
+  extend Enumerize
+
+  enumerize :feeling, in: [:angry, :sad, :confused, :happy]
 end

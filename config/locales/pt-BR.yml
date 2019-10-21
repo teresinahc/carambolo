@@ -4,6 +4,13 @@ pt-BR:
   delete: "Deletar"
   edit: "Editar"
   show: "Visualizar"
+  enumerize:
+    entry:
+      feeling:
+        angry: "Raiva"
+        confused: "Confuso"
+        happy: "Feliz"
+        sad: "Triste"
   activerecord:
     models:
       entry: "Entrada"
@@ -12,8 +19,3 @@ pt-BR:
       entries:
         description: "Descrição"
         feeling: "Sentimento"
-        feelings:
-          angry: "Raiva"
-          confused: "Confuso"
-          happy: "Feliz"
-          sad: "Triste"
