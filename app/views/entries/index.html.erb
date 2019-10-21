@@ -18,7 +18,7 @@
         <tr class="entrie">
           <td class="column"><%= entry.feeling %></td>
           <td class="column"><%= entry.description %></td>
-          <td class="column"><%= entry.hour.strftime("%I:%M %p") %></td>
+          <td class="column"><%= entry.hour.try(:strftime, "%I:%M %p") %></td>
           <td class="column"><%= entry.day %></td>
           <td class="column"><%= link_to 'Show', entry %></td>
           <td class="column"><%= link_to 'Edit', edit_entry_path(entry) %></td>
