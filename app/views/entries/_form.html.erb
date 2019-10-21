@@ -21,7 +21,12 @@
     <%= form.text_area :description %>
   </div>
 
-   <div class="field">
+  <div class="field">
+    <%= form.label :hour %>
+    <%= form.time_field :hour %>
+  </div>
+
+  <div class="field">
     <%= form.label :day %>
     <%= form.date_field :day %>
   </div>
