@@ -1,6 +1,6 @@
 FROM ruby:2.6.3
 
-ENV NODE_VERSION=8.12.0
+ENV NODE_VERSION=12.13.0
 
 run sed -i '/deb-src/d' /etc/apt/sources.list && \
   apt-get update
@@ -14,8 +14,8 @@ RUN curl -sSL "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 run npm install --global yarn
 
 RUN mkdir /myapp
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
-RUN bundle install
-COPY . /myapp
+
+# Execute script everytime container starts
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.s  h
+ENTRYPOINT ["entrypoint.sh"]

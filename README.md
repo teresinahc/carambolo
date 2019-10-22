@@ -42,20 +42,20 @@ O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Rand
 Make sure that you have [docker](https://docs.docker.com/install/) installed on your system.
 
 ```bash
-#Clone the project
+# Clone the project
 $ git clone git@github.com:marclerodrigues/carambolo.git
 $ cd carambolo
 
 # copy and edit the configuration
-$ cp config/database.yml.example config/database.yml
+$ cp config/database.yml.docker-sample config/database.yml
 
-# Prepare container
-$ docker-compose build
-$ docker-compose run --rm web yarn install --check-files
-$ docker-compose run --rm web rake db:create
-$ docker-compose run --rm web rake db:migrate
+# Let open the console container
+$ docker-compose run --rm web bash
 
-# Up container
+# Then run the setup script
+$ DOCKER_SETUP=true bin/setup
+
+# With that all the depencies will be installed and you can run the project with:
 $ docker-compose up
 ```
-You should then be able to navigate to http://localhost:3000/ in a web browser.
+Then you can go to `localhost:3000` and you will see the project is up and running.
