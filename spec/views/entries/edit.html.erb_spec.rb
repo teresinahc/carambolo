@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "entries/edit", type: :view do
   before(:each) do
-    @entry = assign(:entry, Entry.create!(
-      :feeling => "MyString",
-      :description => "MyText"
-    ))
+    @entry = assign(:entry, create(:entry))
   end
 
   it "renders the edit entry form" do
