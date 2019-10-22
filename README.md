@@ -13,7 +13,7 @@ O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Rand
 ##### create fork
 `git clone https://github.com/<your username>/carambolo`
 
-`git remote add upstream https://github.com/marclerodrigues/carambolo`
+`git remote add upstream https://github.com/teresinahc/carambolo`
 
 ##### submit a pull request
 
