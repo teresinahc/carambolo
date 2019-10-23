@@ -28,9 +28,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        flash[:success] = 'User was successfully created.'
+        format.html { redirect_to @user }
         format.json { render :show, status: :created, location: @user }
       else
+        flash.now[:success] = 'Sorry, an error has occured'
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -42,9 +44,11 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        flash[:success] = 'User was successfully updated.'
+        format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else
+        flash.now[:success] = 'Sorry, an error has occured'
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -56,7 +60,8 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      flash[:success] = 'User was successfully destroyed.'
+      format.html { redirect_to users_url }
       format.json { head :no_content }
     end
   end
