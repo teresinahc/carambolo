@@ -28,9 +28,11 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        flash[:success] = 'Entry was successfully created.'
+        format.html { redirect_to @entry }
         format.json { render :show, status: :created, location: @entry }
       else
+        flash.now[:success] = 'Sorry, an error has occured'
         format.html { render :new }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
@@ -42,9 +44,11 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
+        flash[:success] = 'Entry was successfully updated.'
+        format.html { redirect_to @entry }
         format.json { render :show, status: :ok, location: @entry }
       else
+        flash.now[:success] = 'Sorry, an error has occured'
         format.html { render :edit }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
@@ -56,7 +60,8 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     respond_to do |format|
-      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
+      flash[:success] = 'Entry was successfully destroyed.'
+      format.html { redirect_to entries_url }
       format.json { head :no_content }
     end
   end
