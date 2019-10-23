@@ -32,7 +32,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user }
         format.json { render :show, status: :created, location: @user }
       else
-        flash.now[:success] = 'Sorry, an error has occured'
+        flash.now[:error] = 'Sorry, an error has occured'
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else
-        flash.now[:success] = 'Sorry, an error has occured'
+        flash.now[:error] = 'Sorry, an error has occured'
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

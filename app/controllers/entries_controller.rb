@@ -32,7 +32,7 @@ class EntriesController < ApplicationController
         format.html { redirect_to @entry }
         format.json { render :show, status: :created, location: @entry }
       else
-        flash.now[:success] = 'Sorry, an error has occured'
+        flash.now[:error] = 'Sorry, an error has occured'
         format.html { render :new }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
@@ -48,7 +48,7 @@ class EntriesController < ApplicationController
         format.html { redirect_to @entry }
         format.json { render :show, status: :ok, location: @entry }
       else
-        flash.now[:success] = 'Sorry, an error has occured'
+        flash.now[:error] = 'Sorry, an error has occured'
         format.html { render :edit }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
