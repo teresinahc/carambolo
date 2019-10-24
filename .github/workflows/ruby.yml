@@ -6,6 +6,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [10.x]
 
     steps:
     - name: 'Checkout Github Action'
@@ -14,6 +18,10 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
     - name: 'install yarn'
       run: npm install -g yarn
     - name: Build and test with Rake
