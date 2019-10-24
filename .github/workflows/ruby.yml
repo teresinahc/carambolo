@@ -29,4 +29,5 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
         yarn install --check-files
+        gem install pg -v '1.1.4' --source 'https://rubygems.org/'
         bundle exec rake
