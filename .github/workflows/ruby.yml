@@ -36,7 +36,7 @@ jobs:
     - name: 'install yarn'
       run: npm install -g yarn
     - name: 'install pg'
-      run: apt-get install libpq-dev
+      run: sudo apt-get install libpq-dev
     - name: Bundle install
       run: |
         gem install bundler
