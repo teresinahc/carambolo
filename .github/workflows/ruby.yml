@@ -45,7 +45,7 @@ jobs:
         gem install pg -v '1.1.4' --source 'https://rubygems.org/'
     - name: Setup pg db
       run: |
-        cp .github/workflows/database.yml.sample config/database.yml
+        cp .github/workflows/database.yml.github-actions config/database.yml
         bin/rails db:setup
         bundle exec rake
       env:
