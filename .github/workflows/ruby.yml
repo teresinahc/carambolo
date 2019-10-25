@@ -47,6 +47,7 @@ jobs:
       run: |
         cp .github/workflows/database.yml.github-actions config/database.yml
         bin/rails db:setup
+        bin/rails db:migrate
         bundle exec rake
       env:
         RAILS_ENV: test
