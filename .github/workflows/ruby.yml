@@ -51,5 +51,5 @@ jobs:
         bundle exec rake
       env:
         RAILS_ENV: test
-        POSTGRES_USER: $postgres
-        POSTGRES_PASSWORD: $postgres
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
