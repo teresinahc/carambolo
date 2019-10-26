@@ -45,10 +45,10 @@ jobs:
     - name: Setup pg db
       run: |
         cp .github/workflows/database.yml.github-actions config/database.yml
-        bin/rails db:create RAILS_ENV=test
+        bin/rails db:create
         bin/rails db:schema:load
         bin/rails db:seed
-        bin/rails db:migrate:status
+        bin/rails db:migrate
         bin/rails db:test:prepare
         bundle exec rake
       env:
