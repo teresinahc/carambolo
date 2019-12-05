@@ -1,6 +1,7 @@
 # README
 
 ### Project Description
+
 O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Randômicas, um hackaton pela vida" no mês de Setembro, no qual acontecem iniciativas e debates acerca da saúde mental com foco em prevenção ao suicídio. No app os usuários poderão externalizar suas emoções e contar sobre seu dia-a-dia, possibilitando compreender e organizar seus pensamentos. A intenção desta aplicação é facilitar para pacientes em terapia o exercício da atividade psicológica conhecida como "técnica das três colunas", que consiste em registrar emoções diárias e reflexão acerca delas.
 
 ### Dependencies
@@ -11,13 +12,15 @@ O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Rand
 ### How to contribute
 
 ##### create fork
+
 `git clone https://github.com/<your username>/carambolo`
 
-`git remote add upstream https://github.com/marclerodrigues/carambolo`
+`git remote add upstream https://github.com/teresinahc/carambolo`
 
 ##### submit a pull request
 
 ### Configuration
+
 `bundle install`
 
 `yarn install --check-files`
@@ -27,7 +30,32 @@ O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Rand
 `cp config/database.yml.sample config/database.yml`
 
 ### Database initialization
+
 `rails db:setup`
 
 ### Run the server
+
 `rails server`
+
+### Using Docker
+
+Make sure that you have [docker](https://docs.docker.com/install/) installed on your system.
+
+```bash
+# Clone the project
+$ git clone git@github.com:marclerodrigues/carambolo.git
+$ cd carambolo
+
+# copy and edit the configuration
+$ cp config/database.yml.docker-sample config/database.yml
+
+# Let open the console container
+$ docker-compose run --rm web bash
+
+# Then run the setup script
+$ DOCKER_SETUP=true bin/setup
+
+# With that all the depencies will be installed and you can run the project with:
+$ docker-compose up
+```
+Then you can go to `localhost:3000` and you will see the project is up and running.

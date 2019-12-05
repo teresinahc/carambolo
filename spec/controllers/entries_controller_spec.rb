@@ -29,11 +29,11 @@ RSpec.describe EntriesController, type: :controller do
   # Entry. As you add validations to Entry, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { feeling: 'awesome', description: 'WoooWW', hour: 22 }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { other_feeling: 'bad mood', age: 66, admin: true }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -84,12 +84,38 @@ RSpec.describe EntriesController, type: :controller do
         post :create, params: {entry: valid_attributes}, session: valid_session
         expect(response).to redirect_to(Entry.last)
       end
+
+      it "render success flash message" do
+        post :create, params: {entry: valid_attributes}, session: valid_session
+        expect(flash[:success]).to_not be_nil
+      end
+
+      it "render success flash message text" do
+        post :create, params: {entry: valid_attributes}, session: valid_session
+        expect(flash[:success]).to match(/Entry was successfully created./)
+      end
     end
 
     context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
+      it "returns a failure response (i.e. to display the 'new' template)" do
         post :create, params: {entry: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
+        expect(response).not_to be_successful
+      end
+
+      it "render failure flash message" do
+        skip('Missing template')
+
+        expect_any_instance_of(Entry).to receive(:save).and_return(false)
+        post :create, params: {entry: invalid_attributes}, session: valid_session
+        expect(flash[:error]).to_not be_nil
+      end
+
+      it "render failure flash message text" do
+        skip('Missing template')
+
+        expect_any_instance_of(Entry).to receive(:save).and_return(false)
+        post :create, params: {entry: invalid_attributes}, session: valid_session
+        expect(flash[:error]).to match(/Sorry, an error has occured/)
       end
     end
   end
@@ -112,13 +138,41 @@ RSpec.describe EntriesController, type: :controller do
         put :update, params: {id: entry.to_param, entry: valid_attributes}, session: valid_session
         expect(response).to redirect_to(entry)
       end
+
+      it "render success flash message" do
+        entry = Entry.create! valid_attributes
+        put :update, params: {id: entry.to_param, entry: valid_attributes}, session: valid_session
+        expect(flash[:success]).to_not be_nil
+      end
+
+      it "render success flash message text" do
+        entry = Entry.create! valid_attributes
+        put :update, params: {id: entry.to_param, entry: valid_attributes}, session: valid_session
+        expect(flash[:success]).to match(/Entry was successfully updated./)
+      end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         entry = Entry.create! valid_attributes
         put :update, params: {id: entry.to_param, entry: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
+        expect(response).not_to be_successful
+      end
+
+      it "render failure flash message" do
+        skip('Missing template')
+
+        entry = Entry.create! valid_attributes
+        put :update, params: {id: entry.to_param, entry: invalid_attributes}, session: valid_session
+        expect(flash[:error]).to_not be_nil
+      end
+
+      it "render failure flash message text" do
+        skip('Missing template')
+
+        entry = Entry.create! valid_attributes
+        put :update, params: {id: entry.to_param, entry: invalid_attributes}, session: valid_session
+        expect(flash[:error]).to match(/Sorry, an error has occured/)
       end
     end
   end
@@ -136,6 +190,17 @@ RSpec.describe EntriesController, type: :controller do
       delete :destroy, params: {id: entry.to_param}, session: valid_session
       expect(response).to redirect_to(entries_url)
     end
-  end
 
+    it "render success flash message" do
+      entry = Entry.create! valid_attributes
+      post :destroy, params: {id: entry.to_param}, session: valid_session
+      expect(flash[:success]).to_not be_nil
+    end
+
+    it "render success flash message text" do
+      entry = Entry.create! valid_attributes
+      post :destroy, params: {id: entry.to_param}, session: valid_session
+      expect(flash[:success]).to match(/Entry was successfully destroyed./)
+    end
+  end
 end
