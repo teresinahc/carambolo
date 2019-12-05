@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "entries/show", type: :view do
+  let(:entry) { create(:entry, feeling: 'Feeling', description: 'MyText') }
   before(:each) do
-    @entry = assign(:entry, Entry.create!(
-      :feeling => "Feeling",
-      :description => "MyText"
-    ))
+    @entry = assign(:entry, entry)
   end
 
   it "renders attributes in <p>" do
