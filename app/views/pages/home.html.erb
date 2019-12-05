@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= I18n.t 'site.title' %></title>
+  <meta name="description" content="<%= I18n.t 'site.description' %>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+
+  <body>
+    <a class="github-fork-ribbon" href="https://github.com/teresinahc/carambolo" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <div id="particles-js">
+      <div class="header">
+        <h1>
+          <span class="site-title"><%= I18n.t 'site.username' %></span>
+          <span class="site-description"><%= I18n.t 'site.description' %></span>
+        </h1>
+        <div class="header-icons">
+          <a aria-label="Facebook" target="_blank" href="https://www.facebook.com/<%= I18n.t 'site.facebook_username' %>"><i class="icon fa fa-facebook" aria-hidden="true"></i></a>
+          <a aria-label="Twitter" target="_blank" href="https://twitter.com/<%= I18n.t 'site.twitter_username' %>"><i class="icon fa fa-twitter" aria-hidden="true"></i></a>
+          <a aria-label="Instagram" target="_blank" href="https://www.instagram.com/<%= I18n.t 'site.instagram_username' %>"><i class="icon fa fa-instagram" aria-hidden="true"></i></a>
+          <a aria-label="Github" target="_blank" href="https://github.com/<%= I18n.t 'site.github_username' %>"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
+        </div>
+        <div class="header-links">
+          <a class="link" href="#about" data-scroll>Sobre</a>
+          <a class="link" href="#projects" data-scroll>Projetos</a>
+        </div>
+      </div>
+      <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+    </div>
+
+    <section id="about">
+      <div class="user-details">
+        <h1> Sobre </h1>
+        <h2> <%= I18n.t 'site.description' %> </h2>
+      </div>
+       <div class="tech">
+         <p>O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Randômicas,
+            um hackaton pela vida" no mês de Setembro, no qual acontecem iniciativas e debates acerca
+             da saúde mental com foco em prevenção ao suicídio.</p>
+         <p>No app os usuários poderão externalizar suas emoções e contar sobre seu dia-a-dia, possibilitando
+         compreender e organizar seus pensamentos.</p>
+         <p>A intenção desta aplicação é facilitar para pacientes em terapia o exercício da atividade psicológica
+          conhecida como "técnica das três colunas", que consiste em registrar emoções diárias e reflexão acerca delas.</p>
+       </div>
+       <center><a class="project-link" href="https://pro.psychcentral.com/psychoeducation/2017/07/cbt-technique-using-the-triple-column-technique-to-change-your-thoughts-to-change-your-life/">Artigo sobre a técnica das três colunas</a></center>
+    </section>
+
+    <section id="projects">
+      <div class="user-details">
+          <h1> Projetos </h1>
+        </div>
+        <div class="user-projects">
+          <div class="images-right">
+            <img alt="mountains" src="/assets/img/mountains.jpg" />
+          </div>
+          <div class="contents">
+            <h3> Carambolo App </h3>
+            <ul>
+              <li> Mobile </li>
+            </ul>
+            <p>Um app mobile para registrar emoções e seu dia-a-dia, baseado na técnica das três colunas.</p>
+            <a class="project-link" href="#">Acessar App</a>
+          </div>
+        </div>
+      </section>
+
+    <footer class="footer">
+      <p>&copy; <%= I18n.t 'site.username' %></p>
+      <p><a href="https://github.com/nrandecker">Teresina Hacker Clube</a></p>
+    </footer>
+
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/assets/js/sweet-scroll.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+  </body>
+</html>
