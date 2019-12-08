@@ -125,14 +125,14 @@ RSpec.describe EntriesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        attributes_for(:entry, feeling: 'Good', user_id: user.id)
+        attributes_for(:entry, feeling: :sad, user_id: user.id)
       }
       let(:entry) { create(:entry, user_id: user.id) }
 
       it "updates the requested entry" do
         put :update, params: { id: entry.to_param, entry: new_attributes }, session: valid_session
         entry.reload
-        expect(entry.feeling).to eq('Good')
+        expect(entry.feeling).to eq("sad")
       end
 
       it "redirects to the entry" do
