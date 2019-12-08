@@ -30,4 +30,26 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  back: "Back"
+  create: "Create"
+  delete: "Delete"
+  edit: "Edit"
+  show: "Show"
+  how_are_you: "How are you feeling today?"
+  enumerize:
+    entry:
+      feeling:
+        angry: "Angry"
+        confused: "Confused"
+        happy: "Happy"
+        sad: "Sad"
+  activerecord:
+    models:
+      entry: "Entry"
+      user: "User"
+    attributes:
+      entries:
+        description: "Description"
+        feeling: "Feeling"
+        hour: "Hour"
+        day: "Day"
