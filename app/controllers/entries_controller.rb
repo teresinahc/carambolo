@@ -33,7 +33,7 @@ class EntriesController < ApplicationController
         format.json { render :show, status: :created, location: @entry }
       else
         flash.now[:error] = 'Sorry, an error has occured'
-        format.html { render :new }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
@@ -49,7 +49,7 @@ class EntriesController < ApplicationController
         format.json { render :show, status: :ok, location: @entry }
       else
         flash.now[:error] = 'Sorry, an error has occured'
-        format.html { render :edit }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
@@ -74,6 +74,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:feeling, :description, :day, :hour)
+      params.require(:entry).permit(:feeling, :description, :day, :hour, :user_id)
     end
 end
