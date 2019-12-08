@@ -4,5 +4,6 @@ FactoryBot.define do
     description { Faker::Lorem.words(number: 10) }
     hour { Time.now }
     day { Date.today}
+    user
   end
 end
