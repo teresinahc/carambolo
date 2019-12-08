@@ -1,0 +1,57 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+    - name: 'Checkout Github Action'
+      uses: actions/checkout@master
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: 'install yarn'
+      run: npm install -g yarn
+    - name: 'install pg'
+      run: sudo apt-get install libpq-dev
+    - name: Bundle install
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        yarn install --check-files
+        gem install pg -v '1.1.4' --source 'https://rubygems.org/'
+    - name: Setup pg db
+      run: |
+        cp .github/workflows/database.yml.github-actions config/database.yml
+        bin/rails db:create
+        bin/rails db:schema:load
+        bin/rails db:seed
+        bin/rails db:migrate
+        bin/rails db:test:prepare
+        bundle exec rake
+      env:
+        RAILS_ENV: test
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
