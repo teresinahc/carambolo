@@ -20,6 +20,8 @@ group :development, :test do
   gem 'faker', '~> 2.6.0'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :test do
