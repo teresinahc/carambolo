@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Feeling:</strong>
-  <%= @entry.feeling %>
+  <strong><%= t(:feeling, scope: 'activerecord.attributes.entries') %>:</strong>
+  <%= t(@entry.feeling, scope: 'activerecord.attributes.entries.feelings') %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t(:description, scope: 'activerecord.attributes.entries') %>:</strong>
   <%= @entry.description %>
 </p>
 
 <p>
-  <strong>Hour:</strong>
+  <strong><%= t(:hour, scope: 'activerecord.attributes.entries') %>:</strong>
   <%= @entry.hour.strftime("%I:%M %p")%>
 </p>
 <p>
-  <strong>Day:</strong>
+  <strong><%= t(:day, scope: 'activerecord.attributes.entries') %>:</strong>
   <%= @entry.day %>
 </p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to t(:edit), edit_entry_path(@entry) %> |
+<%= link_to t(:back), entries_path %>
