@@ -22,6 +22,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry'
   gem 'pry-nav'
+  gem 'shoulda-matchers'
 end
 
 group :test do
