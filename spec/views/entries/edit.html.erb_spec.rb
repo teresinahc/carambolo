@@ -5,6 +5,7 @@ RSpec.describe "entries/edit", type: :view do
 
   before(:each) do
     @entry = assign(:entry, create(:entry))
+    # sign_in :user
     allow(view).to receive(:current_user).and_return(user)
   end
 
