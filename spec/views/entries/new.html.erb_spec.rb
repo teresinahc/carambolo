@@ -1,11 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "entries/new", type: :view do
-  let(:user) { FactoryBot.create :user }
+  include Devise::Test::ControllerHelpers
+  let(:user) { create(:user) }
 
   before(:each) do
     assign(:entry, build(:entry))
-    # sign_in :user
+    sign_in user
     allow(view).to receive(:current_user).and_return(user)
   end
 
