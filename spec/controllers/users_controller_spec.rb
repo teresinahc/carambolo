@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe UsersController, type: :controller do
+  let(:user) { create(:user) }
+
   let(:valid_attributes) {
     attributes_for(:user)
   }
@@ -10,6 +12,10 @@ RSpec.describe UsersController, type: :controller do
   }
 
   let(:valid_session) { {} }
+
+  before do
+    sign_in user
+  end
 
   describe "GET #index" do
     before { create(:user, valid_attributes) }

@@ -40,7 +40,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::IntegrationHelpers, type: :request
-  config.include Warden::Test::Helpers
+
   # Remove this line if you"re not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -68,4 +68,13 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+
+  config.include Devise::Test::ControllerHelpers, type: :view
+
+  config.before(:each, type: :view) do
+    user = create(:user)
+    sign_in user
+    allow(view).to receive(:current_user).and_return(user)
+  end
 end

@@ -1,13 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "entries/new", type: :view do
-  include Devise::Test::ControllerHelpers
-  let(:user) { create(:user) }
-
-  before(:each) do
+  before do
     assign(:entry, build(:entry))
-    sign_in user
-    allow(view).to receive(:current_user).and_return(user)
   end
 
   it "renders new entry form" do
