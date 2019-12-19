@@ -16,18 +16,12 @@ RSpec.describe 'form', type: :feature do
 
     context "submit a form succesfully" do
       it "redirect to correct page" do
-        # expect(page).to redirect_to("entry_path")
+        expect(page.current_path).to eq(entry_path(id: Entry.last.id))
       end
 
       it "render correct message" do
         expect(page).to have_content("Entry was successfully created.")
       end
-    end
-  end
-
-  describe '' do
-    context "error submitting a form" do
-
     end
   end
 end
