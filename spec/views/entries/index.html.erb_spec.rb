@@ -9,9 +9,9 @@ RSpec.describe "entries/index", type: :view do
 
   it "renders a list of entries" do
     render
-    assert_select "tr>td", :text => entries[0].feeling
+    assert_select "tr>td", :text => entries[0].feeling.capitalize
     assert_select "tr>td", :text => entries[0].description
-    assert_select "tr>td", :text => entries[1].feeling
+    assert_select "tr>td", :text => entries[1].feeling.capitalize
     assert_select "tr>td", :text => entries[1].description
   end
 end

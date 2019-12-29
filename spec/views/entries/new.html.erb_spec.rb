@@ -10,7 +10,7 @@ RSpec.describe "entries/new", type: :view do
 
     assert_select "form[action=?][method=?]", entries_path, "post" do
 
-      assert_select "input[name=?]", "entry[feeling]"
+      assert_select "select[name=?]", "entry[feeling]"
 
       assert_select "textarea[name=?]", "entry[description]"
     end
