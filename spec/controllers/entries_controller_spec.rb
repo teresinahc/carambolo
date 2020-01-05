@@ -93,25 +93,6 @@ RSpec.describe EntriesController, type: :controller do
         expect(flash[:success]).to match(/Entry was successfully created./)
       end
     end
-
-    context "with invalid params" do
-      xit "returns a failure response (i.e. to display the 'new' template)" do
-        post :create, params: { entry: invalid_attributes }
-        expect(response).not_to be_successful
-      end
-
-      xit "render failure flash message" do
-        expect_any_instance_of(Entry).to receive(:save).and_return(false)
-        post :create, params: { entry: invalid_attributes }
-        expect(flash[:error]).to_not be_nil
-      end
-
-      xit "render failure flash message text" do
-        expect_any_instance_of(Entry).to receive(:save).and_return(false)
-        post :create, params: { entry: invalid_attributes }
-        expect(flash[:error]).to match(/Sorry, an error has occured/)
-      end
-    end
   end
 
   describe "PUT #update" do
@@ -140,25 +121,6 @@ RSpec.describe EntriesController, type: :controller do
       it "render success flash message text" do
         put :update, params: { id: entry.to_param, entry: valid_attributes }
         expect(flash[:success]).to match(/Entry was successfully updated./)
-      end
-    end
-
-    context "with invalid params" do
-      let(:entry) { create(:entry, valid_attributes) }
-
-      xit "returns a success response (i.e. to display the 'edit' template)" do
-        put :update, params: {id: entry.to_param, entry: invalid_attributes}
-        expect(response).not_to be_successful
-      end
-
-      xit "render failure flash message" do
-        put :update, params: {id: entry.to_param, entry: invalid_attributes}
-        expect(flash[:error]).to_not be_nil
-      end
-
-      xit "render failure flash message text" do
-        put :update, params: {id: entry.to_param, entry: invalid_attributes}
-        expect(flash[:error]).to match(/Sorry, an error has occured/)
       end
     end
   end
