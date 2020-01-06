@@ -3,10 +3,6 @@ require 'rails_helper'
 RSpec.describe "Entries", type: :request do
   let(:user) { create(:user) }
 
-  before do
-    sign_in user
-  end
-
   describe "GET /entries" do
     let(:user) { create(:user) }
     let!(:user_entry) {
