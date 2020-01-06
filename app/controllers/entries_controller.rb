@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = current_user.entries.new(entry_params)
+    @entry = current_user.entries.new(entry_params.merge(user_id: current_user.id ))
 
     respond_to do |format|
       if @entry.save
@@ -61,6 +61,6 @@ class EntriesController < ApplicationController
     end
 
     def entry_params
-      params.require(:entry).permit(:feeling, :description, :day, :hour, :user_id)
+      params.require(:entry).permit(:feeling, :description, :day, :hour)
     end
 end

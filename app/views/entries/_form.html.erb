@@ -31,12 +31,6 @@
     <%= form.date_field :day %>
   </div>
 
-  <% if user_signed_in? %>
-    <div class="field">
-      <%= form.hidden_field :user_id, value: current_user.id %>
-    </div>
-  <% end %>
-
   <div class="actions">
     <%= form.submit %>
   </div>
