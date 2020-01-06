@@ -50,3 +50,6 @@ en:
           feeling: "Feeling"
           hour: "Hour"
           day: "Day"
+  helpers:
+    submit:
+      create: "Create Entry"

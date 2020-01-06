@@ -49,3 +49,6 @@ pt-BR:
           feeling: "Sentimento"
           hour: "Hora"
           day: "Dia"
+  helpers:
+    submit:
+      create: "Criar Entrada"
