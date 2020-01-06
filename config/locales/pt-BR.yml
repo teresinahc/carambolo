@@ -11,15 +11,15 @@ pt-BR:
     instagram_username: projetocarambolo
     twitter_username: projetocarambolo
     row:
-      first: O projeto surgiu em um encontro do Teresina Hacker Clube, chamado
-      "Nerdices Randômicas", um hackaton pela vida" no mês de Setembro, no qual
+      first: "O projeto surgiu em um encontro do Teresina Hacker Clube, chamado
+      \"Nerdices Randômicas, um hackaton pela vida\" no mês de Setembro, no qual
       acontecem iniciativas e debates acerca da saúde mental com foco em
-      prevenção ao suicídio.
-      second: No app os usuários poderão externalizar suas emoções e contar sobre
-      seu dia-a-dia, possibilitando compreender e organizar seus pensamentos.
-      third: A intenção desta aplicação é facilitar para pacientes em terapia o
-      exercício da atividade psicológica conhecida como "técnica das três colunas",
-      que consiste em registrar emoções diárias e reflexão acerca delas.
+      prevenção ao suicídio."
+      second: "No app os usuários poderão externalizar suas emoções e contar sobre
+      seu dia-a-dia, possibilitando compreender e organizar seus pensamentos."
+      third: "A intenção desta aplicação é facilitar para pacientes em terapia o
+      exercício da atividade psicológica conhecida como \"técnica das três colunas\",
+      que consiste em registrar emoções diárias e reflexão acerca delas."
     app:
       name: Carambolo App
       description: Um app mobile para registrar emoções e seu dia-a-dia, baseado na técnica das três colunas.
