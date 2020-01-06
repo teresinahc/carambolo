@@ -26,6 +26,7 @@ pt-BR:
       kind: Mobile
       access: Acessar App
     github_username:  teresinahc
+    new_entry: Nova Entrada
     back: "Voltar"
     create: "Criar"
     delete: "Deletar"
