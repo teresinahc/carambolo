@@ -8,10 +8,10 @@ RSpec.describe 'form', type: :feature do
       sign_in user
       visit new_entry_path
 
-      fill_in "Feeling", with: 'neutral'
-      fill_in "Description", with: 'example'
-      fill_in "Hour", with: '12:32'
-      click_on 'Create Entry'
+      select "Feliz", from: 'entry_feeling'
+      fill_in "Descrição", with: 'example'
+      fill_in "Hora", with: '12:32'
+      click_on 'Criar Entrada'
     end
 
     context "submit a form succesfully" do
