@@ -1,0 +1,31 @@
+@import "lib/normalize";
+@import "lib/fontawesome";
+@import "lib/devicon";
+
+@import 'base';
+@import 'vars';
+@import 'animation';
+@import 'header';
+@import 'projects';
+
+.footer {
+  background: $main;
+  padding: 10px 0;
+  margin-top: 100px;
+  text-align: center;
+  color: #5B6E5C;
+  .love {
+    color: red;
+  }
+  a {
+    text-decoration: none;
+    margin: 0;
+    color: #5B6E5C;
+    &:hover{
+      color: $sec;
+    }
+    &:active {
+      color: $sec;
+    }
+  }
+}

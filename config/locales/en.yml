@@ -1,55 +1,52 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  back: "Back"
-  create: "Create"
-  delete: "Delete"
-  edit: "Edit"
-  show: "Show"
-  how_are_you: "How are you feeling today?"
-  enumerize:
-    entry:
-      feeling:
-        angry: "Angry"
-        confused: "Confused"
-        happy: "Happy"
-        sad: "Sad"
-  activerecord:
-    models:
-      entry: "Entry"
-      user: "User"
-    attributes:
-      entries:
-        description: "Description"
-        feeling: "Feeling"
-        hour: "Hour"
-        day: "Day"
+  site:
+    title: Carambolo Project!
+    description: A project for life!
+    projects: Projects
+    about: About
+    thc: Teresina Hacker Clube
+    main_article: Article about a three-column technique
+    email: projetocarambolo@gmail.com
+    facebook_username: projetocarambolo
+    instagram_username: projetocarambolo
+    twitter_username: projetocarambolo
+    github_username: teresinahc
+    row:
+      first: "The project came up at a meeting of the Teresina Hacker Club, called
+       \"Random Geekness, a hackaton for life \"in September, in which
+       there are initiatives and debates about mental health focusing on
+       suicide prevention."
+      second: "In the app, users will be able to externalize their emotions and tell about
+       their daily life, making it possible to understand and organize their thoughts."
+      third: "The purpose of this application is to facilitate the therapy process
+       for patients, exercise the psychological activity known as the \"three column technique\",
+       which consists in recording daily emotions and thinking about them."
+    app:
+      name: Carambolo App
+      description: A mobile app to record emotions and your daily life, based on
+       the technique of the three columns.
+      kind: Mobile
+      access: Access App
+    back: "Back"
+    create: "Create"
+    delete: "Delete"
+    edit: "Edit"
+    show: "Show"
+    how_are_you: "How are you feeling today?"
+    enumerize:
+      entry:
+        feeling:
+          angry: "Angry"
+          confused: "Confused"
+          happy: "Happy"
+          sad: "Sad"
+    activerecord:
+      models:
+        entry: "Entry"
+        user: "User"
+      attributes:
+        entries:
+          description: "Description"
+          feeling: "Feeling"
+          hour: "Hour"
+          day: "Day"
