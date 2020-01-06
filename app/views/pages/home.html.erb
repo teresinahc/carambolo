@@ -14,8 +14,8 @@
     <div id="particles-js">
       <div class="header">
         <h1>
-          <span class="site-title"><%= I18n.t 'site.username' %></span>
-          <span class="site-description"><%= I18n.t 'site.description' %></span>
+          <span class="site-title"><%= I18n.t('site.title') %></span>
+          <span class="site-description"><%= I18n.t('site.description') %></span>
         </h1>
         <div class="header-icons">
           <a aria-label="Facebook" target="_blank" href="https://www.facebook.com/<%= I18n.t 'site.facebook_username' %>"><i class="icon fa fa-facebook" aria-hidden="true"></i></a>
@@ -24,8 +24,8 @@
           <a aria-label="Github" target="_blank" href="https://github.com/<%= I18n.t 'site.github_username' %>"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
         </div>
         <div class="header-links">
-          <a class="link" href="#about" data-scroll>Sobre</a>
-          <a class="link" href="#projects" data-scroll>Projetos</a>
+          <a class="link" href="#about" data-scroll><%= I18n.t('site.about') %></a>
+          <a class="link" href="#projects" data-scroll><%= I18n.t('site.projects') %></a>
         </div>
       </div>
       <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
@@ -33,24 +33,23 @@
 
     <section id="about">
       <div class="user-details">
-        <h1> Sobre </h1>
-        <h2> <%= I18n.t 'site.description' %> </h2>
+        <h1><%= I18n.t('site.about') %></h1>
+        <h2><%= I18n.t('site.description') %></h2>
       </div>
        <div class="tech">
-         <p>O projeto surgiu em um encontro do Teresina Hacker Clube, chamado "Nerdices Randômicas,
-            um hackaton pela vida" no mês de Setembro, no qual acontecem iniciativas e debates acerca
-             da saúde mental com foco em prevenção ao suicídio.
+         <p>
+           <%= I18n.t('site.row.first') %>
          </p>
-         <p>No app os usuários poderão externalizar suas emoções e contar sobre seu dia-a-dia, possibilitando
-            compreender e organizar seus pensamentos.
+         <p>
+           <%= I18n.t('site.row.second') %>
          </p>
-         <p>A intenção desta aplicação é facilitar para pacientes em terapia o exercício da atividade psicológica
-          conhecida como "técnica das três colunas", que consiste em registrar emoções diárias e reflexão acerca delas.
+         <p>
+           <%= I18n.t('site.row.third') %>
          </p>
        </div>
        <center>
          <a class="project-link" href="https://pro.psychcentral.com/psychoeducation/2017/07/cbt-technique-using-the-triple-column-technique-to-change-your-thoughts-to-change-your-life/">
-           Artigo sobre a técnica das três colunas
+           <%= I18n.t('site.main_article') %>
          </a>
        </center>
     </section><br>
@@ -59,26 +58,26 @@
 
     <section id="projects">
       <div class="user-details">
-          <h1> Projetos </h1>
+          <h1 <%= I18n.t('site.app.kind') %></h1>
         </div>
         <div class="user-projects">
           <div class="images-right">
             <img alt="mountains" src="/assets/mountains.jpg" />
           </div>
           <div class="contents">
-            <h3> Carambolo App </h3>
+            <h3><%= I18n.t('site.app.name') %></h3>
             <ul>
-              <li> Mobile </li>
+              <li><%= I18n.t('site.app.kind') %></li>
             </ul>
-            <p>Um app mobile para registrar emoções e seu dia-a-dia, baseado na técnica das três colunas.</p>
-            <a class="project-link" href="#">Acessar App</a>
+            <p><%= I18n.t('site.app.description') %></p>
+            <a class="project-link" href="#"><%= I18n.t('site.app.access') %></a>
           </div>
         </div>
       </section>
 
     <footer class="footer">
-      <p>&copy; <%= I18n.t 'site.username' %></p>
-      <p><a href="https://github.com/teresinahc" target="_blank">Teresina Hacker Clube</a></p>
+      <p>&copy; <%= I18n.t('site.title') %></p>
+      <p><a href="https://github.com/teresinahc" target="_blank"><%= I18n.t('site.thc') %></a></p>
     </footer>
 
     <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
