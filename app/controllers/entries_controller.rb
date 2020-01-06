@@ -1,10 +1,11 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :new, :create]
 
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = current_user.entries.all
   end
 
   # GET /entries/1
@@ -24,7 +25,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
+    @entry = current_user.entries.new(entry_params)
 
     respond_to do |format|
       if @entry.save
