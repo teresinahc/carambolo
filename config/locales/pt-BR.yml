@@ -1,4 +1,5 @@
 pt-BR:
+  new_entry: Nova Entrada
   site:
     title: Projeto Carambolo!
     description: Um projeto pela vida!
@@ -26,30 +27,29 @@ pt-BR:
       kind: Mobile
       access: Acessar App
     github_username:  teresinahc
-    new_entry: Nova Entrada
-    back: "Voltar"
-    create: "Criar"
-    delete: "Deletar"
-    edit: "Editar"
-    show: "Visualizar"
-    how_are_you: "Como você está se sentindo hoje?"
-    enumerize:
-      entry:
-        feeling:
-          angry: "Raiva"
-          confused: "Confuso"
-          happy: "Feliz"
-          sad: "Triste"
-    activerecord:
-      models:
-        entry: "Entrada"
-        user: "Usuário"
-      attributes:
-        entries:
-          description: "Descrição"
-          feeling: "Sentimento"
-          hour: "Hora"
-          day: "Dia"
+  back: "Voltar"
+  create: "Criar"
+  delete: "Deletar"
+  edit: "Editar"
+  show: "Visualizar"
+  how_are_you: "Como você está se sentindo hoje?"
+  enumerize:
+    entry:
+      feeling:
+        angry: "Raiva"
+        confused: "Confuso"
+        happy: "Feliz"
+        sad: "Triste"
+  activerecord:
+    models:
+      entry: "Entrada"
+      user: "Usuário"
+    attributes:
+      entries:
+        description: "Descrição"
+        feeling: "Sentimento"
+        hour: "Hora"
+        day: "Dia"
   helpers:
     submit:
       create: "Criar Entrada"

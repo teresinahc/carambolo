@@ -1,4 +1,5 @@
 en:
+  new_entry: "New Entry"
   site:
     title: Carambolo Project!
     description: A project for life!
@@ -27,29 +28,29 @@ en:
        the technique of the three columns.
       kind: Mobile
       access: Access App
-    back: "Back"
-    create: "Create"
-    delete: "Delete"
-    edit: "Edit"
-    show: "Show"
-    how_are_you: "How are you feeling today?"
-    enumerize:
-      entry:
-        feeling:
-          angry: "Angry"
-          confused: "Confused"
-          happy: "Happy"
-          sad: "Sad"
-    activerecord:
-      models:
-        entry: "Entry"
-        user: "User"
-      attributes:
-        entries:
-          description: "Description"
-          feeling: "Feeling"
-          hour: "Hour"
-          day: "Day"
+  back: "Back"
+  create: "Create"
+  delete: "Delete"
+  edit: "Edit"
+  show: "Show"
+  how_are_you: "How are you feeling today?"
+  enumerize:
+    entry:
+      feeling:
+        angry: "Angry"
+        confused: "Confused"
+        happy: "Happy"
+        sad: "Sad"
+  activerecord:
+    models:
+      entry: "Entry"
+      user: "User"
+    attributes:
+      entries:
+        description: "Description"
+        feeling: "Feeling"
+        hour: "Hour"
+        day: "Day"
   helpers:
     submit:
       create: "Create Entry"
