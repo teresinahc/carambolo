@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = current_user.entries.new(entry_params.merge(user_id: current_user.id ))
+    @entry = current_user.entries.new(entry_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @entry.save

@@ -13,7 +13,7 @@ RSpec.describe EntriesController, type: :controller do
 
   describe "GET #index" do
     context "when user is not logged in" do
-      it "redirects to login page" do        
+      it "redirects to login page" do
         get :index
 
         expect(response).to have_http_status(302)

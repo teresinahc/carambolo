@@ -1,16 +1,16 @@
 require "rails_helper"
 
-RSpec.describe 'form', type: :feature do
-  describe 'submit a form' do
+RSpec.describe "form", type: :feature do
+  describe "submit a form" do
     let(:user) { create(:user) }
 
     before do
       sign_in user
       visit new_entry_path
 
-      select "Feliz", from: 'entry_feeling'
-      fill_in "Descrição", with: 'example'
-      fill_in "Hora", with: '12:32'
+      select 'Feliz', from: 'entry_feeling'
+      fill_in 'Descrição', with: 'example'
+      fill_in 'Hora', with: '12:32'
       click_on 'Criar Entrada'
     end
 
