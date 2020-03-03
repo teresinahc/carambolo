@@ -2,6 +2,8 @@ version: '3'
 services:
   db:
     image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   web:
@@ -9,14 +11,13 @@ services:
     stdin_open: true
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
-    environment:
-      - BUNDLE_PATH=/bundle/vendor
-      - BUNDLE_APP_CONFIG=/app/.bundle
     volumes:
       - .:/myapp
       - bundle_path:/bundle/vendor
     ports:
       - '3000:3000'
+    environment:
+      DATABASE_URL: postgres://postgres@db
     depends_on:
       - db
 volumes:
