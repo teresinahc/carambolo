@@ -1,4 +1,5 @@
 en:
+  new_entry: "New Entry"
   site:
     title: Carambolo Project!
     description: A project for life!
@@ -13,40 +14,43 @@ en:
     github_username: teresinahc
     row:
       first: "The project came up at a meeting of the Teresina Hacker Club, called
-       \"Random Geekness, a hackaton for life \"in September, in which
-       there are initiatives and debates about mental health focusing on
-       suicide prevention."
+       \"Random Geekness, a hackaton for life \"in September, in which
+       there are initiatives and debates about mental health focusing on
+       suicide prevention."
       second: "In the app, users will be able to externalize their emotions and tell about
-       their daily life, making it possible to understand and organize their thoughts."
+       their daily life, making it possible to understand and organize their thoughts."
       third: "The purpose of this application is to facilitate the therapy process
        for patients, exercise the psychological activity known as the \"three column technique\",
-       which consists in recording daily emotions and thinking about them."
+       which consists in recording daily emotions and thinking about them."
     app:
       name: Carambolo App
       description: A mobile app to record emotions and your daily life, based on
        the technique of the three columns.
       kind: Mobile
       access: Access App
-    back: "Back"
-    create: "Create"
-    delete: "Delete"
-    edit: "Edit"
-    show: "Show"
-    how_are_you: "How are you feeling today?"
-    enumerize:
-      entry:
-        feeling:
-          angry: "Angry"
-          confused: "Confused"
-          happy: "Happy"
-          sad: "Sad"
-    activerecord:
-      models:
-        entry: "Entry"
-        user: "User"
-      attributes:
-        entries:
-          description: "Description"
-          feeling: "Feeling"
-          hour: "Hour"
-          day: "Day"
+  back: "Back"
+  create: "Create"
+  delete: "Delete"
+  edit: "Edit"
+  show: "Show"
+  how_are_you: "How are you feeling today?"
+  enumerize:
+    entry:
+      feeling:
+        angry: "Angry"
+        confused: "Confused"
+        happy: "Happy"
+        sad: "Sad"
+  activerecord:
+    models:
+      entry: "Entry"
+      user: "User"
+    attributes:
+      entries:
+        description: "Description"
+        feeling: "Feeling"
+        hour: "Hour"
+        day: "Day"
+  helpers:
+    submit:
+      create: "Create Entry"

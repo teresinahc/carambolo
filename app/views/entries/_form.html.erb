@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label t(:feeling, scope: 'activerecord.attributes.entries') %>
+    <%= form.label :feeling, t(:feeling, scope: 'activerecord.attributes.entries') %>
     <%= form.select :feeling, Entry.feeling.options %>
   </div>
 
   <div class="field">
-    <%= form.label t(:description, scope: 'activerecord.attributes.entries') %>
+    <%= form.label :description, t(:description, scope: 'activerecord.attributes.entries') %>
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label t(:hour, scope: 'activerecord.attributes.entries') %>
+    <%= form.label :hour, t(:hour, scope: 'activerecord.attributes.entries') %>
     <%= form.time_field :hour %>
   </div>
 
   <div class="field">
-    <%= form.label t(:day, scope: 'activerecord.attributes.entries') %>
+    <%= form.label :day, t(:day, scope: 'activerecord.attributes.entries') %>
     <%= form.date_field :day %>
   </div>
 

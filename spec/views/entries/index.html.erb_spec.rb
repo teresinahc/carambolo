@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "entries/index", type: :view do
-  let(:entries) { create_list(:entry, 2)}
+  let(:entries) { create_list(:entry, 2) }
 
   before(:each) do
     assign(:entries, entries)

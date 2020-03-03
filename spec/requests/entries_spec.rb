@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Entries", type: :request do
+  let(:user) { create(:user) }
+
   describe "GET /entries" do
     let(:user) { create(:user) }
     let!(:user_entry) {

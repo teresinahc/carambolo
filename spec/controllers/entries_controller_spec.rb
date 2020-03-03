@@ -1,8 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe EntriesController, type: :controller do
-
   let(:user) { create(:user) }
+
   let(:valid_attributes) {
     attributes_for(:entry, user_id: user.id)
   }

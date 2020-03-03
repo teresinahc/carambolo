@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "entries/show", type: :view do
   let(:entry) { create(:entry, feeling: :sad, description: 'MyText') }
